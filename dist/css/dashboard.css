@@ -80,3 +80,11 @@ box-shadow: 2px 2px 15px 0px rgba(0,0,0,0.56);
 .card {
     border-radius: 0 !important;
 }
+
+.params {
+  width: 100px;
+}
+
+.params.btn {
+  height: 30px;
+}
