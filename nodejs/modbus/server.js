@@ -21,7 +21,7 @@ client.on('connect', function(connection) {
     });
 });
 
-client.connect('ws://192.168.43.75:8888/', 'echo-protocol');
+client.connect('ws://103.146.203.103:8888/', 'echo-protocol');
 
 
 var server = net.createServer();
