@@ -134,13 +134,6 @@
     <script src="plugins/c3/c3.min.js"></script>
     <script src="plugins/chartjs/Chart.bundle.min.js"></script>
     <script type="text/javascript">
-    var strTable = `<tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>`;
-    setInterval(function() {
-        $('#table_value').prepend(strTable);
-    }, 2000);
     var chart = c3.generate({
         bindto: '#chart',
         data: {
@@ -222,13 +215,19 @@
             ]
         });
 
-        lineChartConfig.data.labels.push('test');
+        lineChartConfig.data.labels.push(obj.datetime);
         lineChartConfig.data.labels.shift();
         lineChartConfig.data.datasets.forEach(function(dataset) {
             dataset.data.shift();
             dataset.data.push(obj.value);
         });
         window.myLine.update();
+
+        var strTable = `<tr>
+                        <td>`+ obj.value +`</td>
+                        <td>`+ obj.datetime +`</td>
+                    </tr>`;
+        $('#table_value').prepend(strTable);
         console.log(obj);
     };
 
